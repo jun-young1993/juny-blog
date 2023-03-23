@@ -11,7 +11,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export && gh-pages -d out",
+    "gh" : "gh-pages -d out",
     "start": "next start",
     "deploy": "vercel deploy",
     "deps": "run-s deps:*",
@@ -34,6 +35,7 @@
     "date-fns": "^2.28.0",
     "expiry-map": "^2.0.0",
     "fathom-client": "^3.4.1",
+    "gh-pages": "^5.0.0",
     "got": "^12.0.3",
     "isomorphic-unfetch": "^3.1.0",
     "lqip-modern": "^1.2.0",
