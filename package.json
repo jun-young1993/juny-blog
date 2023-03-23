@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && touch out/.nojekyll && gh-pages -d out --dotfiles",
+    "build": "next build && next export",
     "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles",
     "start": "next start",
     "deps": "run-s deps:*",
