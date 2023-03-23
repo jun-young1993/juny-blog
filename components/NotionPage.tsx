@@ -179,6 +179,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
     if (lite) params.lite = lite
 
     const searchParams = new URLSearchParams(params)
+
     return mapPageUrl(site, recordMap, searchParams)
   }, [site, recordMap, lite])
 
@@ -241,7 +242,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const socialDescription =
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
-
+    // console.log('siteMapPageUrl',siteMapPageUrl())
   return (
     <>
       <PageHead

@@ -1,11 +1,14 @@
 {
-  "name": "nextjs-notion-starter-kit",
+  "name": "juny-blog",
   "version": "2.0.0",
   "private": true,
   "homepage": "https://jun-young1993.github.io/juny-blog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jun-young1993/juny-blog.git"
+  },
   "description": "The perfect starter kit for building beautiful websites with Next.js and Notion.",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
-  "repository": "transitive-bullshit/nextjs-notion-starter-kit",
   "license": "MIT",
   "engines": {
     "node": ">=16"
@@ -74,5 +77,8 @@
     "cacheable-request": {
       "keyv": "npm:@keyvhq/core@~1.6.6"
     }
+  },
+  "bugs": {
+    "url": "https://github.com/jun-young1993/juny-blog/issues"
   }
 }
