@@ -9,6 +9,7 @@ export interface SiteConfig {
   domain: string
   author: string
   description?: string
+  comments?:boolean
   language?: string
 
   twitter?: string
