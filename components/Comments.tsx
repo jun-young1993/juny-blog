@@ -1,11 +1,12 @@
 import * as React from 'react'
-
+// import { NotionAPI } from 'notion-client'
 export const Comments: React.FC = () => {
   const CommentCount = 0
   const CommentTitle = "Comments"
   const [text,setText] = React.useState("")
   const onPost = () => {
-    alert(text)
+    // console.log(notion)
+    // new NotionAPI()
   }
   const onComment = (e) => {
     setText(e.target.value)
