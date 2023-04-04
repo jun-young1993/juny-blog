@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as types from '@/lib/types'
 import { api, apiHost } from '@/lib/config'
-import { getSiteConfig } from '@/lib/get-config-value'
+// import { getSiteConfig } from '@/lib/get-config-value'
 import { LoadingIcon } from './LoadingIcon'
 
 // import { NotionAPI } from 'notion-client'
@@ -51,13 +51,12 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
-
   React.useEffect(()=>{
     if(data.length === 0){
       console.log("this",this)
 
 
-      fetch(`${apiHost}/${getSiteConfig('notionPageBasePath','')}${api.comments}?pageId=${pageId}`, {
+      fetch(`${apiHost}${api.comments}?pageId=${pageId}`, {
         method: 'GET'
       })
       .then(response => response.text())
@@ -83,7 +82,7 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
 
 
 
-      fetch(`${apiHost}/${getSiteConfig('notionPageBasePath','')}${api.comments}`, {
+      fetch(`${apiHost}${api.comments}`, {
         method: 'POST',
         headers: myHeaders,
         body : JSON.stringify({

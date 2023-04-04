@@ -15,6 +15,7 @@ import {
   PageUrlOverridesMap,
   Site
 } from './types'
+import { notion } from './notion-api'
 
 export const rootNotionPageId: string = parsePageId(
   getSiteConfig('rootNotionPageId'),
@@ -146,7 +147,7 @@ export const isServer = typeof window === 'undefined'
 
 export const port = getEnv('PORT', '3000')
 export const repo = notionPageBasePath
-export const host = isDev ? `http://localhost:${port}` : `https://${domain}`
+export const host = isDev ? `http://localhost:${port}/${notionPageBasePath}` : `https://${domain}`
 export const apiHost = isDev
   ? host
   : `https://${process.env.VERCEL_URL || domain}`
