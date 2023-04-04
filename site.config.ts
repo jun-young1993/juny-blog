@@ -18,6 +18,9 @@ export default siteConfig({
 
   //commnets
   comments: true,
+  // commentIgnore : [
+  //   'ff071cb40d614a62aa88d335261b8b10'
+  // ],
 
   // social usernames (optional)
   // twitter: 'transitive_bs',

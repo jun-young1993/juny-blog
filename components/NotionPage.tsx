@@ -201,8 +201,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
     ),
     [block, recordMap, isBlogPost]
   )
-  const comments = <Comments pageId={pageId}/>
-
+  const comments = site?.rootNotionPageId === pageId ? <></> : <Comments pageId={pageId}/>
+  // console.log(config.commentsIgnore.get('ff071cb40d614a62aa88d335261b8b10'))
   // const footer = React.useMemo(() => <Footer comment={config.comments ? comments : <></>}/>, [])
   const footer = <Footer comment={config.comments ? comments : <></>}/>
 

@@ -10,6 +10,7 @@ export interface SiteConfig {
   author: string
   description?: string
   comments?:boolean
+  // commentsIgnore?:string[]
   language?: string
 
   twitter?: string

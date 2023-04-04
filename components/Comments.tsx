@@ -3,7 +3,7 @@ import * as types from '@/lib/types'
 import { api, apiHost } from '@/lib/config'
 import { getSiteConfig } from '@/lib/get-config-value'
 import { LoadingIcon } from './LoadingIcon'
-import styles from './styles.module.css'
+
 // import { NotionAPI } from 'notion-client'
 // const getComments = (pageId,callback) => {
 //   const requestOptions = {

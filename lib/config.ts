@@ -62,7 +62,14 @@ export const linkedin: string | null = getSiteConfig('linkedin', null)
 export const newsletter: string | null = getSiteConfig('newsletter', null)
 export const zhihu: string | null = getSiteConfig('zhihu', null)
 export const comments:boolean = getSiteConfig('comments',false)
-export const notionPageBasePath:string  = getSiteConfig('notionPageBasePath',false)
+// export const commentsIgnore:Map<string,boolean> = new Map()
+// getSiteConfig('commentsIgnore',[]).forEach((ignoreId:string) => {
+//   commentsIgnore.set(ignoreId,true)
+// })
+
+
+export const notionPageBasePath:string  = getSiteConfig('notionPageBasePath',"")
+
 export const getMastodonHandle = (): string | null => {
   if (!mastodon) {
     return null
