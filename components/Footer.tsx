@@ -11,13 +11,14 @@ import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
 
 import * as config from '@/lib/config'
+import * as types from '@/lib/types'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
 import styles from './styles.module.css'
-import { Comments } from './Comments'
+
 // TODO: merge the data and icons from PageSocial with the social links in Footer
 
-export const FooterImpl: React.FC = () => {
+export const FooterImpl: React.FC<types.Footer> = ({comment}) => {
   const [hasMounted, setHasMounted] = React.useState(false)
   const { isDarkMode, toggleDarkMode } = useDarkMode()
 
@@ -32,10 +33,10 @@ export const FooterImpl: React.FC = () => {
   React.useEffect(() => {
     setHasMounted(true)
   }, [])
-  const comments = <Comments />
+
   return (
     <>
-      {config.comments ? comments : <></>}
+      {comment ? comment : <></>}
       <footer className={styles.footer}>
         <div className={styles.copyright}>Copyright 2023 {config.author}</div>
 

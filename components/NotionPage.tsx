@@ -27,6 +27,7 @@ import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
 import styles from './styles.module.css'
+import { Comments } from './Comments'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -200,8 +201,10 @@ export const NotionPage: React.FC<types.PageProps> = ({
     ),
     [block, recordMap, isBlogPost]
   )
+  const comments = <Comments pageId={pageId}/>
 
-  const footer = React.useMemo(() => <Footer />, [])
+  // const footer = React.useMemo(() => <Footer comment={config.comments ? comments : <></>}/>, [])
+  const footer = <Footer comment={config.comments ? comments : <></>}/>
 
   if (router.isFallback) {
     return <Loading />

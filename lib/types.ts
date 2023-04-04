@@ -70,3 +70,9 @@ export interface NotionPageInfo {
   authorImage: string
   detail: string
 }
+export interface Comments {
+  pageId: string
+}
+export interface Footer {
+  comment ?: React.ReactNode
+}

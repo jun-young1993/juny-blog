@@ -62,6 +62,7 @@ export const linkedin: string | null = getSiteConfig('linkedin', null)
 export const newsletter: string | null = getSiteConfig('newsletter', null)
 export const zhihu: string | null = getSiteConfig('zhihu', null)
 export const comments:boolean = getSiteConfig('comments',false)
+export const notionPageBasePath:string  = getSiteConfig('notionPageBasePath',false)
 export const getMastodonHandle = (): string | null => {
   if (!mastodon) {
     return null
@@ -137,7 +138,7 @@ export const redisNamespace: string | null = getEnv(
 export const isServer = typeof window === 'undefined'
 
 export const port = getEnv('PORT', '3000')
-export const repo = "juny-blog"
+export const repo = notionPageBasePath
 export const host = isDev ? `http://localhost:${port}` : `https://${domain}`
 export const apiHost = isDev
   ? host
@@ -148,7 +149,8 @@ export const apiBaseUrl = `/api`
 export const api = {
   searchNotion: `${apiBaseUrl}/search-notion`,
   getNotionPageInfo: `${apiBaseUrl}/notion-page-info`,
-  getSocialImage: `${apiBaseUrl}/social-image`
+  getSocialImage: `${apiBaseUrl}/social-image`,
+  comments: `${apiBaseUrl}/comments`
 }
 
 // ----------------------------------------------------------------------------

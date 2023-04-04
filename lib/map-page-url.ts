@@ -16,10 +16,10 @@ export const mapPageUrl =
     const pageUuid = parsePageId(pageId, { uuid: true })
 
     if (uuidToId(pageUuid) === site.rootNotionPageId) {
-      return getSiteConfig('notionPageBasePath','')+createUrl('/', searchParams)
+      return '/'+getSiteConfig('notionPageBasePath','')+createUrl('/', searchParams)
     } else {
       return createUrl(
-        `${getSiteConfig('notionPageBasePath','')}/${getCanonicalPageId(pageUuid, recordMap, { uuid })}`,
+        `/${getSiteConfig('notionPageBasePath','')}/${getCanonicalPageId(pageUuid, recordMap, { uuid })}`,
         searchParams
       )
     }
