@@ -15,7 +15,7 @@ import {
   PageUrlOverridesMap,
   Site
 } from './types'
-import { notion } from './notion-api'
+
 
 export const rootNotionPageId: string = parsePageId(
   getSiteConfig('rootNotionPageId'),
