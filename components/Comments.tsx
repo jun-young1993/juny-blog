@@ -12,7 +12,7 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
 
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  const getUrl = `${apiHost}${api.comments}?pageId=${pageId}`
+  const getUrl = `${api.comments}?pageId=${pageId}`
   React.useEffect(()=>{
 
       console.log("this",this)
