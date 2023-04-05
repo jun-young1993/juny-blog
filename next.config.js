@@ -13,16 +13,18 @@ module.exports = withBundleAnalyzer({
   // basePath: !debug ? `/${repository}/` : "",
   assetPrefix: !debug ? `/${repository}/` : "",
   async redirects () {
-    return !debug ?
-    [
-      {
-        source : "/:path((?!juny-blog)*)",
-        destination : "/juny-blog/:path*",
-        permanent : true,
 
-      }
-    ]
-    : undefined
+    return !debug
+      ? [
+        {
+          source : "/:path((?!juny-blog)*)",
+          destination : "/juny-blog/:path*",
+          permanent : true,
+
+        }
+      ]
+      : []
+
   },
   // trailingSlash:true,
   images: {
