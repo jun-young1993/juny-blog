@@ -17,7 +17,7 @@ module.exports = withBundleAnalyzer({
     return !debug
       ? [
         {
-          source : "/:path((?!juny-blog)*)",
+          source : "/:path((?!juny-blog/)*)",
           destination : "/juny-blog/:path*",
           permanent : true,
 
