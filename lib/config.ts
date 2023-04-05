@@ -69,7 +69,7 @@ export const comments:boolean = getSiteConfig('comments',false)
 // })
 
 
-export const notionPageBasePath:string  = getSiteConfig('notionPageBasePath',"")
+
 
 export const getMastodonHandle = (): string | null => {
   if (!mastodon) {
@@ -146,8 +146,8 @@ export const redisNamespace: string | null = getEnv(
 export const isServer = typeof window === 'undefined'
 
 export const port = getEnv('PORT', '3000')
-export const repo = notionPageBasePath
-export const host = isDev ? `http://localhost:${port}/${notionPageBasePath}` : `https://${domain}`
+
+export const host = isDev ? `http://localhost:${port}` : `https://${domain}`
 export const apiHost = isDev
   ? host
   : `https://${process.env.VERCEL_URL || domain}`

@@ -7,10 +7,10 @@ export default siteConfig({
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
-  notionPageBasePath: 'juny-blog',
+
   // basic site info (required)
   name: 'Next.js Notion Starter Kit',
-  domain: 'jun-young1993.github.io/juny-blog',
+  domain: 'jun-young1993.github.io',
   author: 'Kim Jun Young',
 
   // open graph metadata (optional)
