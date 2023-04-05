@@ -30,7 +30,7 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
         console.log(error)
       })
 
-  },[])
+  },[getUrl])
 
   const onPost = () => {
     console.log("text",text)
