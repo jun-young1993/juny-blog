@@ -24,6 +24,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 Allow: /
 Disallow: /api/get-tweet-ast/*
 Disallow: /api/search-notion
+Disallow: /api/comments
+Disallow: /api/test
 
 Sitemap: ${host}/sitemap.xml
 `)
