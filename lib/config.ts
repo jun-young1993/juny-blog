@@ -147,7 +147,8 @@ export const isServer = typeof window === 'undefined'
 
 export const port = getEnv('PORT', '3000')
 
-export const host = isDev ? `http://localhost:${port}` : `https://${domain}`
+export const host = isDev ? `http://localhost:${port}` : `https://${domain}/juny-blog`
+export const basePath = isDev ? '' : `/juny-blog`
 export const apiHost = isDev
   ? host
   : `https://${process.env.VERCEL_URL || domain}`

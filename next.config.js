@@ -3,9 +3,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 })
 // https://nextjs.org/docs/api-reference/next.config.js/redirects
-
-const environment = process.env.NODE_ENV || 'development'
-const isDev = environment === 'development'
+const debug = process.env.NODE_ENV !== "production";
+// const environment = process.env.NODE_ENV || 'development'
+// export const isDev = environment === 'development'
 const repository = "juny-blog";
 module.exports = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
@@ -13,10 +13,10 @@ module.exports = withBundleAnalyzer({
   // basePath: `/${repo}`,
 
   // basePath: !debug ? `/${repository}/` : "",
-  assetPrefix: !isDev ? `/${repository}/` : "",
+  assetPrefix: !debug ? `/${repository}/` : "",
   async redirects () {
 
-    return !isDev
+    return !debug
       ? [
         {
           source : "/:path((?!juny-blog/)*)",
