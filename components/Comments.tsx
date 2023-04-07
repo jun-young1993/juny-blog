@@ -1,7 +1,10 @@
 import * as React from 'react'
 import * as types from '@/lib/types'
 import { api } from '@/lib/config'
+// import { LoadingIcon } from './LoadingIcon'
+import {FaPaperPlane} from '@react-icons/all-files/fa/FaPaperPlane'
 import { LoadingIcon } from './LoadingIcon'
+
 
 export const Comments: React.FC<types.Comments> = ({pageId}) => {
 
@@ -73,6 +76,7 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
     setText(e.target.value)
   }
   console.log(data)
+  console.log('isLoaded',isLoaded)
   return (
     <>
 
@@ -87,55 +91,88 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
       }}/> */}
       {data.length} {CommentTitle}
       <br/>
-      <input
+      <div
         style={{
-          width:"45%",
-          borderRadius: "3%",
-          resize: "none",
-          borderWidth: "medium",
-          borderColor: "gray",
+          width:"100%",
+          display: "flex",
+          textAlign:"left",
+          margin:"0 auto"
         }}
-        disabled={!isLoaded}
-        value={text}
-        onChange={onComment}
-      />
-
-      <button disabled={!isLoaded}  onClick={onPost}>{isLoaded ? "post" : <LoadingIcon/>}</button>)
+      >
+        <div style={{flex:0.5}}></div>
+        <input
+          style={{
+            flex:8,
+            borderRadius: "3%",
+            resize: "none",
+            borderWidth: "medium",
+            borderColor: "gray",
+          }}
+          disabled={!isLoaded}
+          value={text}
+          onChange={onComment}
+        />
+        <div style={{flex:0.5}}></div>
+        <div
+          style={{
+            flex:1
+          }}
+        >
+          <a
+            href='#'
+            role='button'
+            onClick={onPost}
+            title='send message'
+          >
+            {isLoaded ? <FaPaperPlane/> : <LoadingIcon />}
+          </a>
+        </div>
+      </div>
       <br/>
+
       <div style={{
         width : "100%",
         height : 'auto',
-        backgroundColor : "#eff6fe",
+        // backgroundColor : "#eff6fe",
+        backgroundImage : "linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%)",
         maxHeight : "500px",
         overflow : "scroll",
         textAlign : "left",
       }}>
-        <br/>
+        {/* <br/> */}
         {data.map((commentData,index) => {
+          const objectDate:Date = new Date(commentData?.created_time || new Date())
+          const createdDate = `${objectDate.getFullYear()}/${objectDate.getMonth()+1}/${objectDate.getDate()} ${objectDate.getHours()}:${objectDate.getMinutes()}`
           return (
-            <>
             <div
               id={commentData?.created_time+'-'+index}
-              style={{
-                width: "97%",
-                height: "60px",
-                // borderLeft : 1,
-                // borderRight : 1,
-                // borderWidth: '1px',
-                // borderStyle: "solid",
-                backgroundColor : index%2 === 0 ? 'white' : '#d4cfcf',
-                marginLeft : 5
-              }}
-              >
-              <span style={{marginLeft : 10}}>
-                { commentData?.properties?.comment?.title[0]?.text?.content}
-              </span>
-              <br />
-              <div style={{textAlign: 'right'}}>
-              {commentData?.created_time}
+              key={commentData?.created_time+'-'+index}
+            >
+              <div
+                style={{
+                  marginLeft:5,
+                  marginRight:5,
+                  marginBottom:5,
+                  marginTop : 5,
+                  height: "60px",
+                  borderRadius: "2px",
+                  background:index%2 === 0 ? 'linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%)' : 'linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%)',
+                  transform : "translate3d(0px, 20px, 0) scale(0.95)",
+                  opacity: "var(0.7)",
+                  transition: "opacity 0.3s",
+                  // backgroundImage : index%2 === 0 ? 'linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%)' : 'linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%)',
+                }}
+                >
+                <span style={{marginLeft : 10}}>
+                  { commentData?.properties?.comment?.title[0]?.text?.content}
+                </span>
+                <br />
+
+                <div style={{textAlign: 'right', fontSize:"small", marginRight:10}}>
+                  {createdDate}
+                </div>
               </div>
             </div>
-            </>
           )
         })}
        <br/>
