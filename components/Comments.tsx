@@ -89,7 +89,7 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
       {/* <hr style={{
         width : "100%"
       }}/> */}
-      {data.length} {CommentTitle}
+      {data?.length} {CommentTitle}
       <br/>
       <div
         style={{
@@ -134,12 +134,13 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
         width : "100%",
         height : 'auto',
         // backgroundColor : "#eff6fe",
-        backgroundImage : "linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%)",
+        backgroundImage : "linear-gradient(-225deg, #8bccf7 10%, #6DD5FA 20%, #FFFFFF 100%)",
         maxHeight : "500px",
         overflow : "scroll",
         textAlign : "left",
       }}>
         {/* <br/> */}
+        {data.length === 0 ? <span>해당 게시글에 등록된 댓글이 없습니다.</span> : <></>}
         {data.map((commentData,index) => {
           const objectDate:Date = new Date(commentData?.created_time || new Date())
           const createdDate = `${objectDate.getFullYear()}/${objectDate.getMonth()+1}/${objectDate.getDate()} ${objectDate.getHours()}:${objectDate.getMinutes()}`
