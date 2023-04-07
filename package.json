@@ -15,8 +15,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles",
+    "build": "next build",
+    "deploy_test": "touch out/.nojekyll && gh-pages -d out --dotfiles",
+    "deploy": "vercel deploy",
     "start": "next start",
     "deps": "run-s deps:*",
     "deps:update": "[ -z $GITHUB_ACTIONS ] && yarn add notion-client notion-types notion-utils react-notion-x || echo 'Skipping deps:update on CI'",
