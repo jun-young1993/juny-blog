@@ -151,7 +151,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
 }) => {
   const router = useRouter()
   const lite = useSearchParam('lite')
-
+console.log(site,recordMap,error,pageId)
   const components = React.useMemo(
     () => ({
       nextImage: Image,
