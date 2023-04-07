@@ -2,7 +2,7 @@
   "name": "juny-blog",
   "version": "2.0.0",
   "private": true,
-  "homepage": "https://jun-young1993.github.io/juny-blog",
+  "homepage": "https://juny-blog.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jun-young1993/juny-blog.git"

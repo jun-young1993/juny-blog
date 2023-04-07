@@ -18,7 +18,7 @@ export const mapPageUrl =
       return createUrl('/', searchParams)
     } else {
       return createUrl(
-        `${getCanonicalPageId(pageUuid, recordMap, { uuid })}`,
+        `/${getCanonicalPageId(pageUuid, recordMap, { uuid })}`,
         searchParams
       )
     }

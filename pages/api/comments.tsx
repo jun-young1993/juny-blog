@@ -1,3 +1,4 @@
+import { notionSecretKey } from '@/lib/config'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 
@@ -5,7 +6,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const databaseId = "30f97a21634b44268078efc8c32682b7"
     const myHeaders = new Headers()
     myHeaders.append("Notion-Version", "2022-06-28")
-    myHeaders.append("Authorization", "Bearer secret_Vg1DrMbsXceXEZ4d8bVhyqnAQd95DHach7LOrtRGCke")
+    myHeaders.append("Authorization", notionSecretKey)
     myHeaders.append("Content-Type","application/json")
     let fetchClient = null
     if (req.method === 'GET') {

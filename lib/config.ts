@@ -132,6 +132,7 @@ export const isRedisEnabled: boolean =
 export const redisHost: string | null = getEnv('REDIS_HOST', null)
 export const redisPassword: string | null = getEnv('REDIS_PASSWORD', null)
 export const redisUser: string = getEnv('REDIS_USER', 'default')
+export const notionSecretKey: string | null = getEnv('NOTION_SECRET_KEY',null)
 export const redisUrl = getEnv(
   'REDIS_URL',
   `redis://${redisUser}:${redisPassword}@${redisHost}`

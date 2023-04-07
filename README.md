@@ -1,2 +1,2 @@
 ### 블로그 개설중....
-[미완성 블로그 URL...](https://jun-young1993.github.io/juny-blog)
+[미완성 블로그 URL...](https://juny-blog.vercel.app)

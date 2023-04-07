@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as types from '@/lib/types'
-import { api, apiHost } from '@/lib/config'
+import { api } from '@/lib/config'
 import { LoadingIcon } from './LoadingIcon'
 
 export const Comments: React.FC<types.Comments> = ({pageId}) => {
@@ -44,7 +44,7 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
 
 
 
-      fetch(`${apiHost}${api.comments}`, {
+      fetch(`${api.comments}`, {
         method: 'POST',
         headers: myHeaders,
         body : JSON.stringify({
