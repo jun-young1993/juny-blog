@@ -1,14 +1,12 @@
 import * as React from 'react'
 import * as types from '@/lib/types'
 import { api } from '@/lib/config'
-import {FaPaperPlane} from '@react-icons/all-files/fa/FaPaperPlane'
-import { LoadingIcon } from './LoadingIcon'
 import {BaseReply, BasicComment} from 'react-simple-comment'
 
 
 export const Comments: React.FC<types.Comments> = ({pageId}) => {
 
-  const CommentTitle = "Comments"
+  // const CommentTitle = "Comments"
   const [data,setData] = React.useState([])
   const [isLoaded,setIsLoaded] = React.useState(true)
   const [commentDom, setCommentDom] = React.useState(1)
@@ -80,7 +78,7 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
     <div
       style={{width:"90%"}}
     >
-      <div style={{marginBottom: 1}}>댓글 {data.length}개</div>
+      <div style={{marginBottom: 1, fontSize:'small'}}>댓글 {data.length}개</div>
       <br />
       <BasicComment
         key={commentDom}
