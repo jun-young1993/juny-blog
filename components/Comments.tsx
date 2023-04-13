@@ -37,14 +37,6 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
 
       if(text !== '' && isLoaded){
         setIsLoaded(false)
-
-        // myHeaders.append("Notion-Version", "2022-06-28");
-        // myHeaders.append("Authorization", "Bearer secret_Vg1DrMbsXceXEZ4d8bVhyqnAQd95DHach7LOrtRGCke");
-
-
-
-
-
         fetch(`${api.comments}`, {
           method: 'POST',
           headers: myHeaders,
@@ -86,11 +78,13 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
         onSend={onPost}
       />
       <div>
-        {data.map((comment:any) => {
+        {data.length === 0
+        ? <div>등록된 댓글이 하나도 없습니다...😢</div>
+        :data.map((comment:any) => {
           console.log(comment)
           return <BaseReply
             key={comment.id}
-            name = "익명"
+            name = {comment?.properties?.user_id?.rich_text[0]?.text?.content || '익명'}
             text = { comment?.properties?.comment?.title[0]?.text?.content}
             date = {new Date(comment.created_time)}
             likeCount = {comment?.properties?.like_count?.number}

@@ -8,6 +8,7 @@ export interface SiteConfig {
   name: string
   domain: string
   author: string
+  email?: string
   description?: string
   comments?:boolean
   // commentsIgnore?:string[]

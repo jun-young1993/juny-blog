@@ -90,6 +90,7 @@ export const FooterImpl: React.FC<types.Footer> = ({comment}) => {
             </a>
           )}
 
+
           {config.github && (
             <a
               className={styles.github}
