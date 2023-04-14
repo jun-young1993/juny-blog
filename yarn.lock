@@ -9193,10 +9193,10 @@
   "resolved" "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.2.tgz"
   "version" "2.1.2"
 
-"react-simple-comment@^0.0.19":
-  "integrity" "sha512-aarz8ZEPIWXThw8WG1wZvqNlHCrZi5Tpf4fp9GtgH5/SAgMTauCQYT7uKk6l4RoZlFausEjN6WtJtzt13R2IWQ=="
-  "resolved" "https://registry.npmjs.org/react-simple-comment/-/react-simple-comment-0.0.19.tgz"
-  "version" "0.0.19"
+"react-simple-comment@^0.0.22":
+  "integrity" "sha512-e6u5dd8tldmrkISlPieB8TgE9jT/GFEBd/ZI8h8Dd5SImm/RkMxEITEpKEZVBfKbkhsxKMGs6Zn8MEwm6jiWAA=="
+  "resolved" "https://registry.npmjs.org/react-simple-comment/-/react-simple-comment-0.0.22.tgz"
+  "version" "0.0.22"
   dependencies:
     "@testing-library/jest-dom" "^5.16.5"
     "@testing-library/react" "^13.4.0"

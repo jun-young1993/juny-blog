@@ -11,7 +11,7 @@ export default siteConfig({
   // basic site info (required)
   name: 'Next.js Notion Starter Kit',
   domain: 'juny-blog.vercel.app',
-  author: 'Kim Jun Young',
+  author: 'Kim-Jun-Young',
   email : 'juny3738@gmail.com',
 
   // open graph metadata (optional)

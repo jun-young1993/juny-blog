@@ -83,6 +83,7 @@ export const Comments: React.FC<types.Comments> = ({pageId}) => {
         :data.map((comment:any) => {
           console.log(comment)
           return <BaseReply
+            isReply={false}
             key={comment.id}
             name = {comment?.properties?.user_id?.rich_text[0]?.text?.content || '익명'}
             text = { comment?.properties?.comment?.title[0]?.text?.content}
